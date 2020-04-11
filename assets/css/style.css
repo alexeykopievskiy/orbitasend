@@ -1132,7 +1132,7 @@ a {
 }
 
 .slider-container {
-	width: 800px;
+	max-width: 800px;
 	margin: auto;
 }
 
@@ -1169,10 +1169,14 @@ a {
 }
 
 .form-inline {
-	width: 800px;
+	max-width: 800px;
 	margin: 20px auto 0;
 	display: flex;
 	flex-direction: column;
+}
+
+.slider-results {
+	margin-top: 30px;
 }
 
 .form-inline .form-group {
@@ -1218,6 +1222,17 @@ a {
 	top: -.39em!important;
 }
 
+#slider label {
+	position: absolute;
+	width: 20px;
+	margin-left: -10px;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #5d5d5d;
+	font-weight: 400;
+}
+
 .form-inline .form-submit:hover {
 	color: #f44336;
   border: 2px solid #f44336;
@@ -1232,12 +1247,16 @@ a {
 
 .form-inputs input {
 	border-radius: 0;
-	border: none;
+	border: 1px solid #efefef;
 	background-color: #efefef;
 	color: #5d5d5d;
 	font-size: 14px;
 	padding: 10px 12px;
 	width: 100%!important;
+}
+
+.form-inputs input.error {
+	border: 1px solid red;
 }
 
 .form-inputs p {

@@ -350,11 +350,72 @@ $(document).ready(function() {
 	});
 
 	$( function() {
-    $( "#slider" ).slider({
+		$("button.form-submit").click(function() {
+			var cost = $(".slider-results span")[0].textContent;
+			var address = $("#address").val();
+			var contact = $("#contacts").val();
+
+			if(!address.length) $("#address").addClass('error');
+			if(!contact.length) $("#contacts").addClass('error');
+
+			var results = {
+				cost,
+				address,
+				contact
+			}
+
+			console.log(results, 'res')
+		});
+
+		$("#address").on('keyup', function() {
+			$(this).removeClass('error')
+		})
+
+		$("#contacts").on('keyup', function() {
+			$(this).removeClass('error')
+		})
+		
+		$( "#slider" ).slider({
 			range: "min",
-			value: 1,
-			step: 50,
-      min: 1,
-      max: 700,
+			value: 51,
+			step: 25,
+      min: 50,
+      max: 100,
+    }).each(function() {
+
+			//
+			// Add labels to slider whose values 
+			// are specified by min, max and whose
+			// step is set to 1
+			//
+		
+			// Get the options for this slider
+			console.log($(this).data()['ui-slider'].options)
+			var opt = $(this).data()['ui-slider'].options;
+
+			
+			// Get the number of possible values
+			var vals = (opt.max - opt.min) / opt.step;
+			
+			// Space out values
+			for (var i = 0; i < vals; i++) {
+				
+				var el = $('<label>'+((opt.value-1) + (opt.step*i))+'k</label>').css('left',(i/vals*100)+'%');
+			
+				$( "#slider" ).append(el);
+				
+			}
+
+			var elMax = $('<label>'+(opt.max)+'k</label>').css('left','98%');
+
+			$("#slider").append(elMax)
+
+			$("#slider").on("slide", function(event, ui) {
+				console.log(ui)
+				var pos = ui.value;
+				console.log(pos)
+
+        $(".slider-results span").text(pos*4)
     });
+		})
   } );
