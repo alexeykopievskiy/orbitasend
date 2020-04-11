@@ -230,159 +230,50 @@ $(function () {
 });
 
 $(document).ready(function () {
-
-	var particlesSettings = {
-		particles: {
-			number: {
-				value: 30,
-				density: {
-					enable: !0,
-					value_area: 800
-				}
-			},
-			color: {
-				value: "#FFF"
-			},
-			shape: {
-				type: "circle",
-				stroke: {
-					width: 0,
-					color: "#F0F0F0"
-				},
-				polygon: {
-					nb_sides: 5
-				},
-				image: {
-					src: "img/github.svg",
-					width: 100,
-					height: 100
-				}
-			},
-			opacity: {
-				value: .5,
-				random: !1,
-				anim: {
-					enable: !1,
-					speed: .5,
-					opacity_min: .1,
-					sync: !1
-				}
-			},
-			size: {
-				value: 3,
-				random: !0,
-				anim: {
-					enable: !1,
-					speed: 10,
-					size_min: .1,
-					sync: !1
-				}
-			},
-			line_linked: {
-				enable: !0,
-				distance: 150,
-				color: "#FFF",
-				opacity: .4,
-				width: 1
-			},
-			move: {
-				enable: !0,
-				speed: 1,
-				direction: "none",
-				random: !1,
-				straight: !1,
-				out_mode: "out",
-				bounce: !1,
-				attract: {
-					enable: !1,
-					rotateX: 600,
-					rotateY: 1200
-				}
-			}
-		},
-		interactivity: {
-			detect_on: "canvas",
-			events: {
-				onhover: {
-					enable: !0,
-					mode: "grab"
-				},
-				onclick: {
-					enable: !0,
-					mode: "push"
-				},
-				resize: !0
-			},
-			modes: {
-				grab: {
-					distance: 140,
-					line_linked: {
-						opacity: 1
-					}
-				},
-				bubble: {
-					distance: 400,
-					size: 40,
-					duration: 2,
-					opacity: 8,
-					speed: 1.5
-				},
-				repulse: {
-					distance: 200,
-					duration: .4
-				},
-				push: {
-					particles_nb: 4
-				},
-				remove: {
-					particles_nb: 2
-				}
-			}
-		},
-		retina_detect: true
-	};
-	console.log('ready')
-	console.log('es')
-	particlesJS('particles-js', { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true }, function () {
-		console.log('done')
-	});
-
+	var particlesJson = { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true }
+	particlesJS('particles-js', particlesJson);
 });
 
 $(function () {
-	var url = 'https://script.google.com/macros/s/abcdefghijklmnopqrstuvwxyz1234567890/exec';
+	var url = 'https://script.google.com/macros/s/AKfycbycw2g6JpDYEpuRFaTgz6PiJgJV8qalPWD_HZY0E3bhxyA4g7pq/exec';
 	$("button.form-submit").click(function () {
 		var cost = $(".slider-results span")[0].textContent;
 		var address = $("#address").val();
-		var contact = $("#contacts").val();
+		var contacts = $("#contacts").val();
 
 		if (!address.length) $("#address").addClass('error');
-		if (!contact.length) $("#contacts").addClass('error');
+		if (!contacts.length) $("#contacts").addClass('error');
 
 		var results = {
 			"address": address,
-			"contacts": contact,
+			"contacts": contacts,
 			"cost": cost
 		}
 
-		console.log(results, 'res')
+		if (address.length && cost.length && contacts.length) {
+			var jqxhr = $.post(url, results, function (data) {
+				console.log("Success! Data: " + data.statusText);
+				$("button.form-submit").text('DONE!')
+				$("#address").val('');
+				$("#contacts").val('');
+			})
+				.fail(function (data) {
+					$("button.form-submit").text('CHECK CONNECTION!')
+				});
+		} else {
+			$("button.form-submit").text('CHECK FIELDS!')
+		}
 
-		var jqxhr = $.ajax({
-			url: url,
-			method: "GET",
-			dataType: "json",
-			data: results
-		}).success(
-			console.log('success')
-		);
 	});
 
 	$("#address").on('keyup', function () {
 		$(this).removeClass('error')
+		$("button.form-submit").text('SEND REQUEST!')
 	})
 
 	$("#contacts").on('keyup', function () {
 		$(this).removeClass('error')
+		$("button.form-submit").text('SEND REQUEST!')
 	})
 
 	$("#slider").slider({
@@ -402,29 +293,17 @@ $(function () {
 		// Get the options for this slider
 		console.log($(this).data()['ui-slider'].options)
 		var opt = $(this).data()['ui-slider'].options;
-
-
 		// Get the number of possible values
 		var vals = (opt.max - opt.min) / opt.step;
-
 		// Space out values
 		for (var i = 0; i < vals; i++) {
-
 			var el = $('<label>' + ((opt.value - 1) + (opt.step * i)) + 'k</label>').css('left', (i / vals * 100) + '%');
-
 			$("#slider").append(el);
-
 		}
-
 		var elMax = $('<label>' + (opt.max) + 'k</label>').css('left', '98%');
-
 		$("#slider").append(elMax)
-
 		$("#slider").on("slide", function (event, ui) {
-			console.log(ui)
 			var pos = ui.value;
-			console.log(pos)
-
 			$(".slider-results span").text(pos * 4)
 		});
 	})
