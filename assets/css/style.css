@@ -1126,6 +1126,7 @@ body {
 	font-size: 17px;
 }
 
-.content a {
+a {
 	color: #ff141f;
+	text-decoration: none;
 }
