@@ -1133,3 +1133,19 @@ footer p{
 		border-top-color:rgba(0,0,0,.07);
 	}
 }
+
+/* Tpl fixes */
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+body {
+	font-size: 17px;
+}
+
+.content a {
+	color: #ff141f;
+}
