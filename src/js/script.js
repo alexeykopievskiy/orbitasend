@@ -247,7 +247,8 @@ $(function () {
 		var results = {
 			"address": address,
 			"contacts": contacts,
-			"cost": cost
+			"cost": cost + '$',
+			"amount": +cost/4 + 'k'
 		}
 
 		if (address.length && cost.length && contacts.length) {
